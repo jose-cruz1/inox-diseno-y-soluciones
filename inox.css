@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
+/*importa dos fuentes tipograficas desde google*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+/*margin y padding elimina márgenes que los navegadores asignan por defecto*/
+/* box-sizing: border-box; facilita manejar tamaños sin que desborden*/
+/*text-decoration: none; elimina subrayados y dedoracions en textos o links*/
+/*list-style: none; elimina viñetas o # que traen listas por defectos*/
+html, body {
+    overflow-x: hidden;
+}
+/*evita desbordes y scroll, evita desplazamientos em horizontal*/
+body {
+  background-color: #fff;
+  color: #333;
+}
+/*aplicamos color de fondo y color de letras*/
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+/*se define un estilo para todos los h1 h2 h3*/
+
+p, a, li {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+/*se definen los estilos de letra para p,a,li*/
+.container {
+  width: 90%;        /* ancho flexible en pantallas pequeñas */
+  max-width: 1200px; /* límite máximo en pantallas grandes */
+  margin: 0 auto;    /* centrado horizontal */
+  padding: 0 15px;   /* espacio a los lados para que no toque bordes */
+}
+.header {
+    background-image: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)),
+        url(imagenes-inox/img-css/modelo1cocina.jpg);/*tamaño de la imagen mínimo 1920x1080*/
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: calc(65vh - 60px);/*agregamos - 60px para restar la altura del menu*/
+        padding-top: 70px; /*compensa el menu fijo*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;/**/
+    z-index: 100;/**/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px 0 50px;
+}
+.logo {
+  width: 10vw;        /* ancho relativo al viewport, por ejemplo 10% */
+  max-width: 150px;   /* no se hace más grande que 150px */
+  min-width: 80px;    /* no se haga demasiado pequeño */
+  flex-shrink: 0;     /* evita que el contenedor se encoja demasiado */
+  padding-top: 50px;  /* espacio arriba */
+}
+.logo img {
+    max-width: 150px;  /* tamaño máximo para pantallas grandes */
+    width: 100%;       /* que ocupe todo el ancho disponible del contenedor */
+    height: auto;      /* altura proporcional al ancho */
+    display: block;
+    transition: max-width 0.3s ease;
+}
+.menu .navbar ul {
+    list-style: none;
+}
+.menu .navbar ul li {
+position: relative;
+float: left;
+}
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 10px 20px;
+    color: #fffdfc;
+    display: block;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu .navbar ul li a:hover{
+    color: #CE967B;
+}
+.menu-icono{
+    width: 25px;
+}
+#menu{
+    display: none;
+}
+.menu-icono {
+    width: 25px;
+}
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+.header-content {
+    text-align: center;
+    margin-top: 50px;
+    max-width: 900px;
+    padding: 0 20px;
+}
+.header-content h1 {
+    font-size: 55px;
+    line-height: 70px;
+    color: rgb(229, 239, 239);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+
+    max-width: 800px;        /* limita el ancho máximo */
+    margin-left: auto;       /* centra horizontalmente */
+    margin-right: auto;
+    padding: 0 20px; 
+}
+.header-content p {
+    font-size: 16px;
+    color: #f9fafc;
+    padding: 0 40px;
+    margin-bottom: 50px;
+}
+
+.productos-gastronomicos {
+    padding: 50px 0;
+    background-color: #E1E2E6;
+    position: relative;
+}
+.gastronomia-content {
+    text-align: center;
+}
+.gastronomia-content h2 {
+    font-size: clamp(1.8rem, 5vw, 35px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    z-index: 2;
+    position: relative;
+}
+.gastronomia-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+.catalogo-1 {
+    width: calc(33.33% - 20px); /* 3 columnas con margen */
+    box-sizing: border-box;
+    background-color: #fff; /* opcional */
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+.catalogo-1:hover {
+    transform: translateY(-5px);
+}
+.catalogo-1 img {
+    width: 100%;
+    height: 200px;/*si las imagenes son de diferente tamaño usamos esto para definir un tamaño en todos, no define el tamaño de la img, corta la img en un cuadro fijo para todos*/
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+.gastronomia-content h3 {
+    font-size: 15px;/*define el tamaño para h2 dentro de section coffee-1*/
+    margin-bottom: 15x;/*defuine el espacio de los h2 dentro de section cooffee 1, con el parrafo*/
+
+}
+.equipo-veterinario {
+    padding: 50px 0;
+    background-color: #E1E2E6;
+    position: relative;
+}
+.veterinaria-content {
+    text-align: center;
+}
+.veterinaria-content h2 {
+    font-size: clamp(1.8rem, 5vw, 35px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    z-index: 2;
+    position: relative;
+}
+.veterinaria-equipo-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+.catalogo-2 {
+    width: calc(33.33% - 20px); /* 3 columnas con margen */
+    box-sizing: border-box;
+    background-color: #fff; /* opcional */
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+.catalogo-2:hover {
+    transform: translateY(-5px);
+}
+.catalogo-2 img {
+    width: 100%;
+    height: 200px;/*si las imagenes son de diferente tamaño usamos esto para definir un tamaño en todos, no define el tamaño de la img, corta la img en un cuadro fijo para todos*/
+    object-fit: contain;/*diferecia entre cover en catalogo1 esto no rta las imagenes si no los reduce de tamaño*/
+    border-radius: 6px;
+    display: block;
+}
+.equipo-para-hospitales {
+    padding: 50px 0;
+    background-color: #E1E2E6;
+    position: relative;
+}
+.hospitales-content {
+    text-align: center;
+}
+
+.hospitales-content h2 {
+    font-size: clamp(1.8rem, 5vw, 35px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    z-index: 2;
+    position: relative;
+}
+.hospital-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+.catalogo-3 {
+    width: calc(33.33% - 20px); /* 3 columnas con margen */
+    box-sizing: border-box;
+    background-color: #fff; /* opcional */
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+.catalogo-3:hover {
+    transform: translateY(-5px);
+}
+.catalogo-3 img {
+    width: 100%;
+    height: 200px;/*si las imagenes son de diferente tamaño usamos esto para definir un tamaño en todos, no define el tamaño de la img, corta la img en un cuadro fijo para todos*/
+    object-fit: contain;/*diferecia entre cover en catalogo1 esto no rta las imagenes si no los reduce de tamaño*/
+    border-radius: 6px;
+    display: block;
+}
+.services {
+    background-image: linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)),
+    url(imagenes-inox/img-css/modelo-fijo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 50px 20px;
+}
+.services-content h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #f9fafc;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.services-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    gap: 30px;
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1200px;
+    /*flex-wrap: wrap;*/
+}
+.services-1 {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+.services-1:hover {
+    transform: translateY(-5px);
+}
+.services-1 img {
+    width: 100%;
+    height: 200px;/*si las imagenes son de diferente tamaño usamos esto para definir un tamaño en todos, no define el tamaño de la img, corta la img en un cuadro fijo para todos*/
+    object-fit: contain;/*diferecia entre cover en catalogo1 esto no rta las imagenes si no los reduce de tamaño*/
+    border-radius: 6px;
+    display: block;
+}
+.services-1 h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.services-1 p {
+    font-size: 14px;
+    color: #666;
+}
+.btn-1 {
+    display: block;       /* para que tome todo el ancho posible */
+    width: fit-content;   /* que el ancho se ajuste al contenido */
+    margin: 50px auto 0;  /* margen arriba y centrado horizontal */
+    font-size: 18px;
+    padding: 10px 20px;
+    color: #fffdfc;
+    text-decoration: none;
+    background: none;
+    border: none;
+    transition: color 0.3s;
+}
+.btn-1:hover {
+    color:#ebad8d;
+}
+.mapa h2{
+    font-size: 55px;
+    line-height: 70px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.mapa h2:hover {
+    color: #CE967B;
+}
+.mapa p {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.footer {
+    background-color: rgb(147, 222, 235);
+    padding: 40px 20px;
+    text-align: center;
+}
+.footer-legal {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.redes-sociales a img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.redes-sociales a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.footer-info p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-info .icono {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+.nuestra-historia {
+  padding: 50px 0;
+}
+
+.nuestra-historia h2 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.fila,
+.fila-alternar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.fila {
+  flex-direction: row; /* texto - imagen */
+}
+
+.fila-alternar {
+  flex-direction: row-reverse; /* imagen - texto */
+}
+
+.fila .texto,
+.fila-alternar .texto,
+.fila .imagen,
+.fila-alternar .imagen {
+  flex: 1 1 45%;
+  padding: 10px;
+}
+
+.fila img,
+.fila-alternar img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fila h2,
+.fila h3,
+.fila-alternar h2,
+.fila-alternar h3 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: #102f3e;
+}
+
+.fila p,
+.fila-alternar p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+html {
+   scroll-behavior: smooth;
+}
+@media(max-width:750px){
+    .menu{
+        padding: 30px 30px 0 30px;
+    }
+    .menu label {
+        display: block;
+    }
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+       background-color: #323337;
+       display: none;
+    }
+    .menu .navbar ul li {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    .menu .navbar ul li a {
+        padding: 15px;
+    }
+    #menu:checked ~ .navbar {
+        display: block;
+
+    }
+}
